@@ -4,28 +4,37 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready
-  game = new Game();
+  var game;
+
+  $('#roll-dice-button').prop('disabled', true);
 
   $("#new-game-button").click(function (e) {
-    game.new(updateView);
+    //game = new Game(updateView);
+    game = new Game();
+    game.initialize(updateView);
+    $('#roll-dice-button').prop('disabled', false);
   });
 
   $("#roll-dice-button").click(function (e) {
-    game.dice.roll(updateView); //callback ?
+    game.takeTurn(updateView);
   });
 
-  function updateView(player, location, amount) {
-    updateMoney(player, amount);
-    movePlayer(location, player);
+  function updateView(players) {
+    for (var i = 0; i < players.length; i++) {
+      updateMoney(players[i]);
+      movePlayer(players[i]);
+    }
   }
 
-  function updateMoney(player, amount) {
-    $("#money-player-" + player).html(amount);
+  function updateMoney(player) {
+    $("#money-player-" + player.id).html(player.amount);
   }
 
-  function movePlayer(location, player)  {
-    $(".piece-player-" + player).removeClass(".piece-player-" + player);
-    $("#square-" + location).addClass(".piece-player-" + player);
+  function movePlayer(player)  {
+    if ($(".piece-player-" + player.id).length) {
+      $(".piece-player-" + player.id).removeClass(".piece-player-" + player.id);
+    }
+    $("#square-" + player.location).addClass(".piece-player-" + player.id);
   }
 
 });
