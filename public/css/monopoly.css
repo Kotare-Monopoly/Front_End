@@ -1,4 +1,3 @@
-
 /*******************************
 Elements
 ********************************/
@@ -88,11 +87,20 @@ Buttons
 .background-image {
     width: 250px;
     float: right;
-    margin-top: 200px;
+    margin-top: 500px;
     position: relative;
     right: 950px;
 
 }
+/*.mono-image {
+     width: 200px;
+    float: right;
+
+    margin-bottom: 200px;
+
+    right: 950px;
+
+}*/
 
 /*******************************
 Board positions - Square
@@ -182,12 +190,10 @@ Board positions - Title
     border-bottom: 1px solid #000;
     line-height: 16px;
 }
-
 #blanktitle{
     background: none;
     border-color: #fff;
 }
-
 #pink{
     background: #ff4f72;
 }
