@@ -1,7 +1,24 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  Game.prototype.drawChanceCard = function(callback) {
+    return {
+      url: '/api/v0.1/chance-card',
+      method: 'GET',
+
+      success: function(data){
+        callback(data.parsedResponse)
+      },
+      error: function(data){
+        alert('Card error')
+      }
+    };
+  };
+
+$("#chance").click(function (e) {
+    game.drawChanceCard(updateCardView);
+  });
+
+  function updateCardView(data) {
+    $(#card_display).append(data.description)
+  }
 });
