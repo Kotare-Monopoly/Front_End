@@ -179,11 +179,63 @@ Square images
   margin-left: 18px;
   margin-top: 20px;
 }
+.community_chest {
+  position:relative;
+  margin-left: 7px;
+  margin-top: 12px;
+}
+.chance_image {
+  position:relative;
+  margin-left: 7px;
+  margin-top: 12px;
 
+}
+.zombie_man {
+  position:relative;
+  margin-left: 14px;
+  margin-top: 1px;
+
+}
+
+.zombie {
+  position:relative;
+  margin-left: 14px;
+  margin-top: 1px;
+
+}
+
+.utilities{
+  position: relative;
+  margin-top: 30px;
+  margin-left: 10px;
+}
+
+.party {
+  position: relative;
+  margin-left: 15px;
+ margin-top: 1px;
+}
+
+.arrow {
+position: relative;
+  margin-left: 15px;
+ margin-top: 80px;
+}
+
+.go {
+  position: relative;
+  margin-left: 15px;
+ margin-top: -60px;
+}
+.free-parking{
+  position: relative;
+  margin-left: 15px;
+ margin-top: -60px;
+}
 
 /*******************************
 Board positions - Title
-********************************/
+*******************************
 
 /*.title{
     background: black;
