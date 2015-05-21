@@ -1,24 +1,37 @@
 $(document).ready(function() {
 
-  Game.prototype.drawChanceCard = function(callback) {
-    return {
-      url: '/api/v0.1/chance-card',
-      method: 'GET',
+  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready
+  var game;
 
-      success: function(data){
-        callback(data.parsedResponse)
-      },
-      error: function(data){
-        alert('Card error')
-      }
-    };
-  };
+  $('#roll-dice-button').prop('disabled', true);
 
-$("#chance").click(function (e) {
-    game.drawChanceCard(updateCardView);
+  $("#new-game-button").click(function (e) {
+    //game = new Game(updateView);
+    game = new Game();
+    game.initialize(updateView);
+    $('#roll-dice-button').prop('disabled', false);
   });
 
-  function updateCardView(data) {
-    $(#card_display).append(data.description)
+  $("#roll-dice-button").click(function (e) {
+    game.takeTurn(updateView);
+  });
+
+  function updateView(players) {
+    for (var i = 0; i < players.length; i++) {
+      updateMoney(players[i]);
+      movePlayer(players[i]);
+    }
   }
+
+  function updateMoney(player) {
+    $("#money-player-" + player.id).html(player.amount);
+  }
+
+  function movePlayer(player)  {
+    if ($(".piece-player-" + player.id).length) {
+      $(".piece-player-" + player.id).removeClass(".piece-player-" + player.id);
+    }
+    $("#square-" + player.location).addClass(".piece-player-" + player.id);
+  }
+
 });
