@@ -17,6 +17,7 @@ $(document).ready(function() {
   });
 
   function updateView(players) {
+    console.log(players);
     for (var i = 0; i < players.length; i++) {
       updateMoney(players[i]);
       movePlayer(players[i]);
@@ -33,9 +34,9 @@ $(document).ready(function() {
     }
     $("#square-" + player.location).addClass(".piece-player-" + player.id);
     if (player.id === 1) {
-      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/kotare.jpg"></div>);
+      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/kotare.jpg"></div>');
     } else {
-      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/hihi.jpg"></div>);
+      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/hihi.jpg"></div>');
       }
   }
 

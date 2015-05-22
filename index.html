@@ -7,81 +7,91 @@
   <link rel="stylesheet" href="public/css/monopoly.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="public/js/Model.js"></script>
   <script src="public/js/application.js"></script>
-  <script src="public/js/card_display.js"></script>
+    <script src="public/js/card_display.js"></script>
 
   <title>Monopoly</title>
-
 </head>
-
-
 <body>
 
 <div class="board">
- <div class= "buttons">
-    <button name="button" id="new-game-button">New Game</button>
-    <button name="button" id="roll-dice-button">Roll Dice </button>
- </div>
- <div class="background-image">
-       <img src="public/image/eda.png" width="700px" height="550px" >
-    </div>
-  <!--   <div class="mono-image">
-       <img src="public/image/monopoly1.jpg" width="300px" height="150px" >
-    </div>
- -->
-    <div class="row" id="row1">
-        <div class="square square-x" id="square-21"></div>
-        <div class="square square-x red" id="square-22"></div>
-        <div class="square square-x" id="square-23"></div>
-        <div class="square square-x red" id="square-24"></div>
-        <div class="square square-x red" id="square-25"></div>
-        <div class="square square-x" id="square-26"></div>
-        <div class="square square-x yellow" id="square-27"></div>
-        <div class="square square-x yellow" id="square-28"></div>
-        <div class="square square-x" id="square-29"></div>
-        <div class="square square-x yellow" id="square-30"></div>
-        <div class="square square-x" id="square-31"></div>
-    </div>
-    <div class="row" id="row2">
-        <div class="col1">
-           <div class="square square-y orange" id="square-20"></div>
-            <div class="square square-y orange" id="square-19"></div>
-            <div class="square square-y" id="square-18"></div>
-            <div class="square square-y orange" id="square-17"></div>
-            <div class="square square-y" id="square-16"></div>
-            <div class="square square-y pink" id="square-15"></div>
-            <div class="square square-y pink" id="square-14"></div>
-            <div class="square square-y" id="square-13"></div>
-            <div class="square square-y pink" id="square-12"></div>
+    <div class= "buttons">
+            <img src="public/image/enspiral_logo.jpg" alt="Enspiral Dev Academy" />
 
+        <div class="card-button" id="card-display">
+            <button name="button" id="chance">Chance</button>
+            <button name="button" id="community">Community</button>
+        </div>
+        <div>
+            <button name="button" id="new-game-button">New Game</button>
+            <button name="button" id="roll-dice-button">Roll Dice </button>
+         </div>
 
+         <div class="background-image">
+            <div class="computers">
+                <img src="public/image/eda.png" width="600px" height="450px" >
+            </div>
+           <!-- <div class="background-image">
+         <div class="enspiral">
+            <img src="public/image/enspiral_logo.jpg" width="600px" height="300px" >
+               </div> -->
         </div>
-        <div class="col3">
-            <div class="square square-y green" id="square-32"></div>
-            <div class="square square-y green" id="square-33"></div>
-            <div class="square square-y" id="square-34"></div>
-            <div class="square square-y green" id="square-35"></div>
-            <div class="square square-y" id="square-36"></div>
-            <div class="square square-y" id="square-37"></div>
-            <div class="square square-y purple" id="square-38"><img class="image"src="public/image/eugene.png" width="60px" height="60px"></div>
-            <div class="square square-y" id="square-39"></div>
-            <div class="square square-y purple" id="square-40"><img class="image"src="public/image/josh.jpg" width="60px" height="60px"></div>
+     </div>
+
+    <div class="board" >
+        <div class="row" id="row1">
+            <div class="square square-x" id="square-21"><div class="free_parking">Free Party</div><img class="party"src="public/image/freeparking.jpg" width="80px" height="80px"></div>
+            <div class="square square-x red" id="square-22"></div>
+            <div class="square square-x" id="square-23"> <img class="chance_image"src="public/image/chance.png" width="80px" height="80px"></div>
+            <div class="square square-x red" id="square-24"></div>
+            <div class="square square-x red" id="square-25"></div>
+            <div class="square square-x" id="square-26"><div class="utilities">The Board Room</div></div>
+            <div class="square square-x yellow" id="square-27"></div>
+            <div class="square square-x yellow" id="square-28"></div>
+            <div class="square square-x" id="square-29"><img class="community_chest"src="public/image/community_chest.jpg" width="80px" height="80px"></div>
+            <div class="square square-x yellow" id="square-30"></div>
+            <div class="square square-x" id="square-31"><img class="zombie_man"src="public/image/zombie.jpg" width="80px" height="80px"><div class ="cop">Sleep deprivation</div></div>
+        </div>
+        <div class="row" id="row2">
+            <div class="col1">
+               <div class="square square-y orange" id="square-20"></div>
+                <div class="square square-y orange" id="square-19"></div>
+                <div class="square square-y" id="square-18"><img class="community_chest"src="public/image/community_chest.jpg" width="80px" height="80px"></div>
+                <div class="square square-y orange" id="square-17"></div>
+                <div class="square square-y" id="square-16"><div class="utilities">The Shire</div></div>
+                <div class="square square-y pink" id="square-15"><img class="image"src="public/image/creative.jpg" width="70px" height="70px"></div>
+                <div class="square square-y pink" id="square-14"><img class="image"src="public/image/hat.jpg" width="70px" height="70px"></div>
+                <div class="square square-y" id="square-13"><img class="community_chest"src="public/image/community_chest.jpg" width="80px" height="80px"></div>
+                <div class="square square-y pink" id="square-12"><img class="image"src="public/image/money.jpg" width="70px" height="70px"></div>
+
+            </div>
+            <div class="col3">
+                <div class="square square-y green" id="square-32"><img class="image"src="public/image/raquel.jpg" width="70px" height="70px"></div>
+                <div class="square square-y green" id="square-33"><img class="image"src="public/image/samson.png" width="70px" height="70px"></div>
+                <div class="square square-y" id="square-34"><img class="community_chest"src="public/image/community_chest.jpg" width="80px" height="80px"></div>
+                <div class="square square-y green" id="square-35"><img class="image"src="public/image/darcy2.png" width="70px" height="70px"></div>
+                <div class="square square-y" id="square-36"><div class="utilities">Inception Room</div></div>
+                <div class="square square-y" id="square-37"><img class="chance_image"src="public/image/chance.png" width="80px" height="80px"></div>
+                <div class="square square-y purple" id="square-38"><img class="image"src="public/image/eugene.png" width="60px" height="60px"></div>
+                <div class="square square-y" id="square-39"></div>
+                <div class="square square-y purple" id="square-40"><img class="image"src="public/image/josh.jpg" width="60px" height="60px"></div>
+            </div>
+        </div>
+        <div class="row" id="row3">
+            <div class="square square-x" id="square-11"><img class="zombie"src="public/image/zombie_jail.jpg" width="80px" height="80px"></div>
+            <div class="square square-x lightblue" id="square-10"></div>
+            <div class="square square-x lightblue" id="square-9" ></div>
+            <div class="square square-x" id="square-8"><img class="chance_image"src="public/image/chance.png" width="80px" height="80px"></div>
+            <div class="square square-x lightblue" id="square-7"></div>
+            <div class="square square-x" id="square-6"><div class="utilities">Bok Choy</div></div>
+            <div class="square square-x" id="square-5"></div>
+            <div class="square square-x brown" id="square-4"><img class="image"src="public/image/dirty-dishes.jpg" width="60px" height="60px"></div>
+            <div class="square square-x" id="square-3"><img class="community_chest"src="public/image/community_chest.jpg" width="80px" height="80px"></div>
+            <div class="square square-x brown" id="square-2"><img class="image"src="public/image/watering-can.jpg" width="60px" height="60px"></div>
+            <div class="square square-x piece-player-1 piece-player-2" id="square-1"><img class="arrow"src="public/image/arrow.png" width="80px" height="20px"><div class="go">GO get  200 free minutes</div></div>
         </div>
     </div>
-    <div class="row" id="row3">
-        <div class="square square-x" id="square-11"></div>
-        <div class="square square-x lightblue" id="square-10"></div>
-        <div class="square square-x lightblue" id="square-9" ></div>
-        <div class="square square-x" id="square-8"></div>
-        <div class="square square-x lightblue" id="square-7"></div>
-        <div class="square square-x" id="square-6"></div>
-        <div class="square square-x" id="square-5"></div>
-        <div class="square square-x brown" id="square-4"><img class="image"src="public/image/dirty-dishes.jpg" width="60px" height="60px"></div>
-        <div class="square square-x" id="square-3"></div>
-        <div class="square square-x brown" id="square-2"><img class="image"src="public/image/watering-can.jpg" width="60px" height="60px"></div>
-        <div class="square square-x piece-player-1 piece-player-2" id="square-1"></div>
     </div>
-</div>
 </body>
-
 </html>

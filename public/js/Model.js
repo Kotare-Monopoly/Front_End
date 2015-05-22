@@ -2,7 +2,7 @@ function Die () {};
 
 Die.prototype.RollDie = function() {
 
-	return Math.floor((Math.Random() * 6) +1);  //return number between 1 and 6
+	return Math.floor((Math.random() * 6) +1);  //return number between 1 and 6
 
 };
 
@@ -24,18 +24,20 @@ function Game () {
 }
 
 Game.prototype.initialize = function(callback){
-	$.ajax(this.getGameState());
+	$.ajax(this.getGameState(this, callback));
 }
 
 Game.prototype.takeTurn = function(callback){
-  var dieResult = this.die[0].RollDie() + this.die[1].RollDie();
+  var dieResult = this.Die[0].RollDie() + this.Die[1].RollDie();
+  console.log(dieResult)
   $.ajax(postDieResult(dieResult, this.currentPlayer));
 };
 
 function postDieResult(dieResult, currentPlayer) {
   return {
-    url: '/api/GameState/DiceRoll',
+    url: 'http://edacentralhub.azurewebsites.net/api/v1/gamestate',
     method: 'POST',
+    // contentType: "application/json",
     data: {
       "dieResult" : dieResult, 
       "currentPlayer" : currentPlayer
@@ -50,24 +52,27 @@ function postDieResult(dieResult, currentPlayer) {
   };
 };
 
-Game.prototype.getGameState = function() {
+Game.prototype.getGameState = function(context, callback) {
   return {
-    url: '/api/GameState/GameInfo',
+    url: 'http://edacentralhub.azurewebsites.net/api/v1/gamestate',
     method: 'GET',
+    // contentType: "application/json",
 
     success: function(data){
     //this.Board = data.board;
-      this.Players[0] = data.Player1;
-      this.Players[1] = data.Player2;
+    // var json = JSON.parse(data);
+    console.log(data);
+      context.Players[0] = data[0];
+      context.Players[1] = data[1];
 
-      if (this.currentPlayer === 1) {
-        this.currentPlayer = 2; //set current player to 2 
+      if (context.currentPlayer === 1) {
+        context.currentPlayer = 2; //set current player to 2 
       }
       else {
-        this.currentPlayer = 1; // otherwise it's set to 1!
+        context.currentPlayer = 1; // otherwise it's set to 1!
       }
 
-      callback(this.Players)
+      callback(context.Players)
     },
     error: function(data){
       alert('Grumpy Cat says No!')

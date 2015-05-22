@@ -31,3 +31,4 @@ $.ajax({
       console.log(data)
   }
 });
+};
