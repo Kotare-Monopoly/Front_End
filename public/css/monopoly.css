@@ -14,6 +14,10 @@ Board Structure
     background: #005C5C;
     height: 1500px;
 }
+.game-board {
+  position: absolute;
+  z-index: -10;
+}
 .row{
     background: #fff;
     float: left;
@@ -29,7 +33,12 @@ Board Structure
 
 #row2 {
     width: 1089px;
-
+    background-image: url('../image/monopoly1.jpg');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 800px ;
+    background-position: center;
+    background-transform: rotate(320deg);
 }
 .col1{
     float: left;
