@@ -20,6 +20,7 @@ $(document).ready(function() {
   });
 
   function updateView(players) {
+    console.log(players);
     for (var i = 0; i < players.length; i++) {
       updateMoney(players[i]);
       movePlayer(players[i]);
