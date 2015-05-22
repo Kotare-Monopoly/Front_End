@@ -32,6 +32,11 @@ $(document).ready(function() {
       $(".piece-player-" + player.id).removeClass(".piece-player-" + player.id);
     }
     $("#square-" + player.location).addClass(".piece-player-" + player.id);
+    if (player.id === 1) {
+      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/kotare.jpg"></div>);
+    } else {
+      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/hihi.jpg"></div>);
+      }
   }
 
 });
