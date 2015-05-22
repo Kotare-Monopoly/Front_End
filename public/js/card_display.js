@@ -1,34 +1,56 @@
-function ChanceCardController () {};
+$(document).ready(function(){
+  function ChanceCardController () {};
 
-ChanceCardController.prototype.drawChanceCard = function(callback) {
-//     return {
-//       url: '/api/v0.1/chance-card',
-//       method: 'GET',
+  ChanceCardController.prototype.drawChanceCard = function(callback) {
+    $.ajax({
+      url: "https://chance-comchest.herokuapp.com/api/v0.1/chance-card",
+      method: 'GET',
 
-//       success: function(data){
-//         $.ajax.callback(data.parsedResponse)
-//       },
-//       error: function(data){
-//         alert('Card error')
-//       }
-//     };
-//   };
+      success: function(data){
+        callback(data);
 
-// $("#chance").click(function (e) {
-//     game.drawChanceCard(updateCardView);
-//   });
+      },
+      error: function(data){
+        alert('Card error')
+      }
+    });
+  };
 
-//   function updateCardView(data) {
-//     $(#card_display).append(data.description)
-//   };
+  $("#chance").click(function () {
+    newCont = new ChanceCardController();
+    newCont.drawChanceCard(UpdateCardView);
+  });
 
-console.log("test");
+  function UpdateCardView(data) {
 
-$.ajax({
-  url: "https://chance-comchest.herokuapp.com/api/v0.1/community-card",
-  method: 'GET',
-  success:function(data){
-      console.log(data)
-  }
+     alert(data);
+  };
+
+  function CommunityCardController () {};
+
+  CommunityCardController.prototype.drawCommunityCard = function(callback) {
+    $.ajax({
+      url: "https://chance-comchest.herokuapp.com/api/v0.1/community-card",
+      method: 'GET',
+
+      success: function(data){
+        callback(data);
+
+      },
+      error: function(data){
+        alert('Card error')
+      }
+    });
+  };
+
+  $("#community").click(function () {
+    newCont = new CommunityCardController();
+    newCont.drawCommunityCard(UpdateCardView);
+  });
+
+  function UpdateCardView(data) {
+
+     alert(data);
+  };
+
 });
-};
