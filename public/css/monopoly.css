@@ -306,6 +306,11 @@ position: relative;
   border-radius: 50%;
 }
 
+.bird {
+  height: 100px;
+  width: 95px;
+}
+
 /*******************************
 Board positions - Title
 *******************************

@@ -35,9 +35,9 @@ $(document).ready(function() {
     $("#square-" + player.CurrentPositionId).addClass(".piece-player-" + player.Id);
     console.log(player.Id);
     if (player.Id === 1) {
-      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img src="../Front-End/public/image/kotare.jpg"></div>');
+      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img class="bird" src="../Front-End/public/image/kotare.jpg"></div>');
     } else {
-      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img src="../Front-End/public/image/hihi.jpg"></div>');
+      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img class="bird" src="../Front-End/public/image/hihi.jpg"></div>');
       }
   }
 
