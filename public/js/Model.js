@@ -24,16 +24,16 @@ function Game () {
 }
 
 Game.prototype.initialize = function(callback){
-	$.ajax(this.getGameState(this, callback));
+	$.ajax(this.getNewGame(this, callback));
 }
 
 Game.prototype.takeTurn = function(callback){
   var dieResult = this.Die[0].RollDie() + this.Die[1].RollDie();
   console.log(dieResult)
-  $.ajax(postDieResult(dieResult, this.currentPlayer));
+  $.ajax(postDieResult(this, callback, dieResult, this.currentPlayer));
 };
 
-function postDieResult(dieResult, currentPlayer) {
+function postDieResult(context, callback, dieResult, currentPlayer) {
   return {
     url: 'http://edacentralhub.azurewebsites.net/api/v1/gamestate',
     method: 'POST',
@@ -44,7 +44,7 @@ function postDieResult(dieResult, currentPlayer) {
     },
 
     success: function(data){
-      $.ajax(getGameState);
+      $.ajax(context.getGameState(context, callback));
     },
     error: function(data){
       alert('Grumpy Cat says No!');
@@ -59,9 +59,31 @@ Game.prototype.getGameState = function(context, callback) {
     // contentType: "application/json",
 
     success: function(data){
-    //this.Board = data.board;
-    // var json = JSON.parse(data);
-    console.log(data);
+      context.Players[0] = data[0];
+      context.Players[1] = data[1];
+
+      if (context.currentPlayer === 1) {
+        context.currentPlayer = 2; //set current player to 2 
+      }
+      else {
+        context.currentPlayer = 1; // otherwise it's set to 1!
+      }
+
+      callback(context.Players)
+    },
+    error: function(data){
+      alert('Grumpy Cat says No!')
+    }
+  };
+};
+
+Game.prototype.getNewGame = function(context, callback) {
+  return {
+    url: 'http://edacentralhub.azurewebsites.net/api/v1/newgame',
+    method: 'GET',
+    // contentType: "application/json",
+
+    success: function(data){
       context.Players[0] = data[0];
       context.Players[1] = data[1];
 

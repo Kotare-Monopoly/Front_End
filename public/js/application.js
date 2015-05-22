@@ -29,14 +29,15 @@ $(document).ready(function() {
   }
 
   function movePlayer(player)  {
-    if ($(".piece-player-" + player.id).length) {
-      $(".piece-player-" + player.id).removeClass(".piece-player-" + player.id);
+    if ($(".piece-player-" + player.Id).length) {
+      $(".piece-player-" + player.Id).removeClass(".piece-player-" + player.Id);
     }
-    $("#square-" + player.location).addClass(".piece-player-" + player.id);
-    if (player.id === 1) {
-      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/kotare.jpg"></div>');
+    $("#square-" + player.CurrentPositionId).addClass(".piece-player-" + player.Id);
+    console.log(player.Id);
+    if (player.Id === 1) {
+      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img src="../Front-End/public/image/kotare.jpg"></div>');
     } else {
-      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/hihi.jpg"></div>');
+      $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img src="../Front-End/public/image/hihi.jpg"></div>');
       }
   }
 
