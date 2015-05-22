@@ -1,26 +1,26 @@
 function ChanceCardController () {};
 
 ChanceCardController.prototype.drawChanceCard = function(callback) {
-//     return {
-//       url: '/api/v0.1/chance-card',
-//       method: 'GET',
+    return {
+      url: '/api/v0.1/chance-card',
+      method: 'get',
 
-//       success: function(data){
-//         $.ajax.callback(data.parsedResponse)
-//       },
-//       error: function(data){
-//         alert('Card error')
-//       }
-//     };
-//   };
+      success: function(data){
+        $.ajax.callback(data.parsedresponse)
+      },
+      error: function(data){
+        alert('card error')
+      }
+    };
+  };
 
-// $("#chance").click(function (e) {
-//     game.drawChanceCard(updateCardView);
-//   });
+$("#chance").click(function (e) {
+    game.drawchancecard(updatecardview);
+  });
 
-//   function updateCardView(data) {
-//     $(#card_display).append(data.description)
-//   };
+  function updatecardview(data) {
+    alert('data.description')
+  };
 
 console.log("test");
 
