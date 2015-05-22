@@ -35,7 +35,7 @@ Game.prototype.takeTurn = function(callback){
 
 function postDieResult(dieResult, currentPlayer) {
   return {
-    url: '/api/GameState/DiceRoll',
+    url: 'http://edacentralhub.azurewebsites.net/api/v1/gamestate',
     method: 'POST',
     // contentType: "application/json",
     data: {

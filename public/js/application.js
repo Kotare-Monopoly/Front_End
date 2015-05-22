@@ -34,9 +34,9 @@ $(document).ready(function() {
     }
     $("#square-" + player.location).addClass(".piece-player-" + player.id);
     if (player.id === 1) {
-      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/kotare.jpg"></div>);
+      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/kotare.jpg"></div>');
     } else {
-      $("#square-" + player.location).append(<div class="piece-holder"><img src="../image/hihi.jpg"></div>);
+      $("#square-" + player.location).append('<div class="piece-holder"><img src="../image/hihi.jpg"></div>');
       }
   }
 
