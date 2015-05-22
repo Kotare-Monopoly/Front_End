@@ -321,6 +321,23 @@ position: relative;
   width: 95px;
 }
 
+#player1hours {
+  position: fixed;
+  width: 200px;
+  height: 30px;
+  top: 100px;
+  left: 1200px;
+  border: 1px dotted black;
+}
+
+#player2hours {
+  position: fixed;
+    width: 200px;
+  height: 30px;
+  top: 300px;
+  left: 1200px;
+  border: 1px dotted black;
+}
 
 
 /*.col1, .col3 {
