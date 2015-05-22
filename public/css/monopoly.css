@@ -10,6 +10,11 @@ Elements
 /*******************************
 Board Structure
 ********************************/
+
+div {
+  z-index: 0;
+}
+
 .board {
     background: #005C5C;
     height: 1500px;
@@ -306,10 +311,21 @@ position: relative;
   border-radius: 50%;
 }
 
+.piece-holder {
+  z-index: 1;
+  position: relative;
+}
+
 .bird {
   height: 100px;
   width: 95px;
 }
+
+
+
+/*.col1, .col3 {
+  opacity: 0;
+}*/
 
 /*******************************
 Board positions - Title
