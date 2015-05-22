@@ -18,6 +18,7 @@ $(document).ready(function() {
 
   function updateView(players) {
     console.log(players);
+     $(".bird").remove();
     for (var i = 0; i < players.length; i++) {
       updateMoney(players[i]);
       movePlayer(players[i]);
@@ -29,14 +30,12 @@ $(document).ready(function() {
   }
 
   function movePlayer(player)  {
-    if ($(".piece-player-" + player.Id).length) {
-      $(".piece-player-" + player.Id).removeClass(".piece-player-" + player.Id);
-    }
-    $("#square-" + player.CurrentPositionId).addClass(".piece-player-" + player.Id);
+    $("#square-" + player.CurrentPositionId).addClass("piece-player-" + player.Id);
     console.log(player.Id);
     if (player.Id === 1) {
       $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img class="bird" src="../Front-End/public/image/kotare.jpg"></div>');
     } else {
+      console.log(player.Id);
       $("#square-" + player.CurrentPositionId).append('<div class="piece-holder"><img class="bird" src="../Front-End/public/image/hihi.jpg"></div>');
       }
   }
