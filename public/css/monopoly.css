@@ -14,6 +14,10 @@ Board Structure
     background: #005C5C;
     height: 1500px;
 }
+.game-board {
+  position: absolute;
+  z-index: -10;
+}
 .row{
     background: #fff;
     float: left;
@@ -29,7 +33,12 @@ Board Structure
 
 #row2 {
     width: 1089px;
-
+    background-image: url('../image/monopoly1.jpg');
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: 800px ;
+    background-position: center;
+    background-transform: rotate(320deg);
 }
 .col1{
     float: left;
@@ -130,20 +139,29 @@ Buttons
 .background-image {
     width: 250px;
     float: right;
-    margin-top: 500px;
+    margin-top: 400px;
     position: relative;
     right: 950px;
 
 }
-/*.mono-image {
-     width: 200px;
+.mono-image {
+    width: 200px;
     float: right;
-
-    margin-bottom: 200px;
-
+    margin-bottom: 1px;
     right: 950px;
+    transform: rotate(320deg);
+}
+/*.enspiral{
+
 
 }*/
+.computers {
+    width: 10px;
+    float: right;
+    margin-top: 130px;
+    position: relative;
+    right: -140px;
+}
 
 /*******************************
 Board positions - Square
@@ -284,8 +302,8 @@ position: relative;
 }
 
 
-.piece-player-1 {
-
+.piece-player {
+  border-radius: 50%;
 }
 
 /*******************************
